@@ -8,7 +8,6 @@ const uuidv1 = require('uuid/v1');
 const uuidv4 = require('uuid/v4');
 const directoryWatcher = require('./src/fileServices/directoryWatcher')
 const chokidar = require('chokidar');
-const { readDir, done } = require('./src/fileServices/fs-mapper.js');
 
 
 const decoder = new StringDecoder('utf8');

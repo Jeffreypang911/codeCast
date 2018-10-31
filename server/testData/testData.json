@@ -1,0 +1,68 @@
+{
+  "asdass": {
+    "title": "NodeNStuff",
+    "user": "Spencer h-White",
+    "description": "asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada",
+    "scheduledDate": "Thusday, August 12 2017",
+    "youtubeURL": null,
+    "userID": 1,
+    "streamID": "asdass",
+    "languageImage": "image",
+    "status": "active"
+  },
+  "asdasx": {
+    "title": "Javascript4U",
+    "user": "Spencer h-White",
+    "description": "asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada",
+    "scheduledDate": "Thusday, August 12 2017",
+    "youtubeURL": null,
+    "userID": 1,
+    "streamID": "asdasx",
+    "languageImage": "image",
+    "status": "archived"
+  },
+  "asdfad": {
+    "title": "RubyNStuff",
+    "user": "Spencer Mc-Whhite",
+    "description": "asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada",
+    "scheduledDate": "Thusday, August 12 2017",
+    "youtubeURL": null,
+    "userID": 1,
+    "streamID": "asdfad",
+    "languageImage": "image",
+    "status": "scheduled"
+  },
+  "abdass": {
+    "title": "NodeNStuff",
+    "user": "Spencer h-White",
+    "description": "asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada",
+    "scheduledDate": "Thusday, August 12 2017",
+    "youtubeURL": null,
+    "userID": 1,
+    "streamID": "abdass",
+    "languageImage": "image",
+    "status": "archived"
+  },
+  "aqdfad": {
+    "title": "RubyNStuff",
+    "user": "Spencer Mc-Whhite",
+    "description": "asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada",
+    "scheduledDate": "Thusday, August 12 2017",
+    "youtubeURL": null,
+    "userID": 1,
+    "streamID": "aqdfad",
+    "languageImage": "image",
+    "status": "active"
+  },
+  "axdasv": {
+    "title": "NodeNStuff",
+    "user": "Spencer h-White",
+    "description": "asdasdasasdasdasdasfsdfadsfasffasdsadsafsdfadsfsdsadasdsafasdfadsfsadsadasdsadsada",
+    "scheduledDate": "Thusday, August 12 2017",
+    "youtubeURL": null,
+    "userID": 1,
+    "streamID": "axdasv",
+    "languageImage": "image",
+    "status": "potato"
+  }
+}

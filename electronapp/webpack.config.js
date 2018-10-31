@@ -22,14 +22,39 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
+            "presets": [
+              "@babel/env", 
+              "@babel/react"
+            ]
+          },
         }
       },
       { 
-        test: /\.s$css/,
-        use: ['style-loader', 'sass-loader', 'css-loader']
+        test: /\.s?css$/,
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+            options: {
+                modules: true, // default is false
+                sourceMap: true,
+                importLoaders: 1,
+                localIdentName: "[name]--[local]--[hash:base64:8]",
+            }
+          }, 
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'less-loader', options: { javascriptEnabled: true }
+          }
+        ]
+      }
     ]
   },
   plugins: [

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Button } from 'antd';
 import { Input, Select } from 'antd';
+import { connect } from 'react-redux';
+import { postActiveStream } from '../redux/ducks/streamsDuck.js'
+
+import { Router, withRouter, Link } from 'react-router-dom';
 
 const electron = window.require('electron');
-const fs = electron.remote.require('fs');
 const ipcRenderer  = electron.ipcRenderer;
 
 const InputGroup = Input.Group;
@@ -15,46 +18,40 @@ class LiveStreamNow extends React.Component {
     super(props);
     this.state = {
       title: 'placeholder',
-      user: 'Spencer Mc-Whhite',
-      description: 'asdasdas',
-      scheduledDate: Date.now(),
+      user: 'Joel Codes',
+      userID: 1,
+      description: '',
+      scheduledDate: new Date(),
       youtubeURL: '',
-      languageImage: 'image'
-    }
-  }
+      languageImage: ''
+    };
+  };
 
   //handlers
-  TitleOnChange = (event) => {
-    this.setState({title: event.target.value});
-  }
+  HandleInputChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
   
-  DescriptionOnChange = (event) => {
-    this.setState({description: event.target.value})
-  }
-
   HandleImageSelection = (value) => {
     this.setState({languageImage: value});
     console.log(value)
-  }
-
-  YoutubeUrlInput = (event) => {
-    this.setState({youtubeURL: event.target.value})
-  }
+  };
 
   HandleSubmit = (event) => {
     event.preventDefault();
     
-    // TODO: check form validation before terminalOpen
-    
+    // TODO: check form validation before terminalOpen and form submit
+    this.props.postActiveStream(this.state);
     ipcRenderer.send('terminalOpen', true);
-    
+    this.props.history.push('/');
     // TODO: show broadcasting view
   };
+
   render() {  
     return (
       <main className="new-stream">
         <header className="header">
-          <Button id="dashboard-btn" type="primary">Dashboard</Button>
+          <Link to='/' id="dashboard-btn">Dashboard</Link>
           <div className="logoPlaceholder">codeCast</div>
         </header>
         <div className="inputs-container">
@@ -66,25 +63,25 @@ class LiveStreamNow extends React.Component {
 
               <div className="title-input">
                 <h3>Title:</h3>
-                <input type="text" title={this.state.title} onChange={this.TitleOnChange} />
+                <input type="text" name='title' onChange={this.HandleInputChange} />
               </div>
               <div className="description-input">
                 <h3>Description:</h3>
-                <textarea type="text" rows="4" cols="90" description={this.state.description} onChange={this.DescriptionOnChange} />
+                <textarea type="text" rows="4" cols="90" name='description' onChange={this.HandleInputChange} />
               </div>
 
               <div className=" bottom-container">
 
                 <div className="youtube-container">
                   <h3>YouTube URL:</h3>
-                  <input type="text" placeholder="https://www.youtube.com/channel/PLACEHOLDER" onChange={this.YoutubeUrlInput} />
+                  <input type="text" placeholder="https://www.youtube.com/channel/PLACEHOLDER" name='youtubeURL' onChange={this.HandleInputChange} />
                 </div>
                 <div className="b-bottom-container">
                   <InputGroup compact>
                     <Select className="image-select" defaultValue="default" onChange={this.HandleImageSelection}>
                       <Option value="default">----</Option>
-                      <Option value="image/path1">Node</Option>
-                      <Option value="image/path2">Ruby</Option>
+                      <Option value="javascript">JavaScript</Option>
+                      <Option value="ruby">Ruby</Option>
                     </Select>
                   </InputGroup>
                   <input type="submit" value="Go live!" />
@@ -99,29 +96,10 @@ class LiveStreamNow extends React.Component {
   }
 }
 
-// leave in 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    postActiveStream: (stream) => dispatch(postActiveStream(stream))
+  };
+};
 
-// const mapStateToProps = (state) => {
-//   return {
-//     fileDir: state.directory.directoryStructure
-//   }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     newScheduledStream: (fileID) => dispatch(updateFile(fileID))
-//   }
-// }
-
-  export default LiveStreamNow;
-// export default connect(null, null)(ActiveStreams);
-
-// data representation
-// {
-//   title: 'HTML/CSS',
-//   broadcaster: '#'
-//   scheduledDate: "2018-03-25",
-//   scheduledTime: "9am",
-//   description: 
-//   id: 1
-// }
+export default withRouter(connect(null, mapDispatchToProps)(LiveStreamNow));

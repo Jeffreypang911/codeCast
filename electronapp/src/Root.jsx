@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Route } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { Provider } from 'react-redux';
 import App from './App.jsx';
+
+
 
 const Root = ({ store }) => (
   <Provider store={ store }>

@@ -6,71 +6,19 @@ import pythonImg from '../../../images/python.png';
 import javascriptImg from '../../../images/javascript.png';
 import csharpImg from '../../../images/csharp.png';
 import htmlcssImg from '../../../images/htmlcss.png';
-import { fetchActiveStreams } from '../../../redux/ducks/streamsDuck.js'
-
+import { fetchActiveStreams } from '../../../redux/ducks/streamsDuck.js';
+import { withRouter } from 'react-router-dom';
 
 
 class ActiveStreams extends Component {  
 
-  constructor(props) {  
-    super(props); 
-    this.state = {
-      // activeStreams: [
-      //   {
-      //     title: 'Python',
-      //     presentor: 'Spencer',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     activeStreamId: 1,
-      //     imagePath: pythonImg
-      //   },
-      //   {
-      //     title: 'Javascript',
-      //     presentor: 'Benji',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     activeStreamId: 2,
-      //     imagePath: javascriptImg
-      //   },
-      //   {
-      //     title: 'HTML/CSS',
-      //     presentor: 'Jeff',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     activeStreamId: 3,
-      //     imagePath: htmlcssImg
-      //   },
-      //   {
-      //     title: 'Node',
-      //     presentor: 'Space G',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     activeStreamId: 4,
-      //     imagePath: javascriptImg
-      //   },
-      //   {
-      //     title: 'Ruby',
-      //     presentor: 'Mandy',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     activeStreamId: 5,
-      //     imagePath: rubyImg
-      //   },
-      //   {
-      //     title: 'C Sharp',
-      //     presentor: 'Silvia',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet,',
-      //     activeStreamId: 6,
-      //     imagePath: csharpImg
-      //   }
-      // ]
-    };
-  }
-
   componentDidMount() {
+    console.log("Spaghetti");
     this.props.fetchActiveStreams();
   }
 
   GetStreamId = (streamClicked) => {
-    console.log(streamClicked)
-    // react-router code goes here
-    // react-router code goes here
-    // react-router code goes here
+    console.log(streamClicked);
   }
 
 
@@ -139,4 +87,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActiveStreams);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ActiveStreams));

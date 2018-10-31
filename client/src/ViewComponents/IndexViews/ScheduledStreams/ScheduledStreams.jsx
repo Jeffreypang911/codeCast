@@ -6,44 +6,10 @@ import pythonImg from '../../../images/python.png';
 import javascriptImg from '../../../images/javascript.png';
 import csharpImg from '../../../images/csharp.png';
 import htmlcssImg from '../../../images/htmlcss.png';
-import { fetchScheduledStreams } from '../../../redux/ducks/streamsDuck.js'
+import { fetchScheduledStreams } from '../../../redux/ducks/streamsDuck.js';
+import { withRouter } from 'react-router-dom';
 
-class ScheduledStreams extends Component {  
-  constructor(props) {  
-    super(props); 
-    this.state = {
-      // scheduledStreams: [
-      //   {
-      //     title: 'Python',
-      //     presentor: 'Spencer',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     startDate: 'Thusday, August 12 2017',
-      //     imagePath: pythonImg
-      //   },
-      //   {
-      //     title: 'Javascript',
-      //     presentor: 'Benji',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     startDate: 'Wednesday, April 11 2017',
-      //     imagePath: javascriptImg
-      //   },
-      //   {
-      //     title: 'HTML/CSS',
-      //     presentor: 'Jeff',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     startDate: 'Tuesday, March 27 2017',
-      //     imagePath: htmlcssImg
-      //   },
-      //   {
-      //     title: 'Javascript',
-      //     presentor: 'Joel',
-      //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      //     startDate: 'Thusday, August 12 2017',
-      //     imagePath: javascriptImg
-      //   }
-      // ]
-    };
-  }
+class ScheduledStreams extends Component {
 
   componentDidMount() {
     this.props.fetchScheduledStreams();
@@ -87,9 +53,8 @@ class ScheduledStreams extends Component {
   }
 
   render() {
-    const renderStreams = this.props.scheduledStreams.map( (stream) => {
-      return this.MakeStreamCard(stream);
-    });
+    const renderStreams = this.props.scheduledStreams
+      .map((stream) => this.MakeStreamCard(stream));
 
     return (
       <main className="streams">
@@ -111,4 +76,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScheduledStreams);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ScheduledStreams));

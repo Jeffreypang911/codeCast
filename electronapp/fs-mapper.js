@@ -4,6 +4,7 @@ const decoder = new StringDecoder('utf8');
 const path = require('path');
 const uuidv1 = require('uuid/v1');
 const uuidv4 = require('uuid/v4');
+const axios = require('./api');
 
 //Create promise.each function that takes array and resolver function
 Promise.each = async function(arr, fn) {
@@ -93,7 +94,7 @@ async function makeJSON(array, root, targetDir) {
       if (fpath.length > 0) {
         //for each node assign child and move one level deeper
         fpath.forEach(async (node, i) => {
-          current[node] ? current[node][fpath[i + i]] : current[node] = {};
+          current[node] ? current[node][fpath[i + 1]] : current[node] = {};
           current = current[node];
           //if last node: 
           //1) assign file and hash, and 
@@ -118,21 +119,42 @@ async function makeJSON(array, root, targetDir) {
     }
   }
   //resolve all promises in array 
-  let resolved = await Promise.each(await promises, resolver);
+  Promise.each(await promises, resolver).then((resolved, rejected) => {
+    resolved.forEach((res, i) => {
+      fileObj[res.id] = res.content;
+    });
+
+    // TEMPORARY POST REQUEST INSIDE MAPPER
+    axios({
+      method: 'post',
+      url: `/api/electron`,
+      data: {
+        streamID: null,
+        directory: dirObj,
+        content: fileObj,
+        paths: pathObj
+      },
+      maxContentLength: Infinity
+    })
+    .then(() => console.log('Post success to /api/electron in fs mapper'))
+    // TODO error handle without infinite axios loop
+    .catch((err) => {
+      console.error('Post failure', err)
+    })
+  })
+  //  END OF TEMPORARY CHANGE
+
   //iterate through resolved promises and assign id hashes to file contents
-  resolved.forEach((res, i) => {
-    fileObj[res.id] = res.content;
-  });
   //write directory and content objects to file
-  fs.writeFile(`${targetDir}/content.json`, JSON.stringify(fileObj), (err) => {
-    if (err) throw err;
-  });
-  fs.writeFile(`${targetDir}/directory.json`, JSON.stringify(dirObj), (err) => {
-    if (err) throw err;
-  });
-  fs.writeFile(`${targetDir}/filepaths.json`, JSON.stringify(pathObj), (err) => {
-    if (err) throw err;
-  });
+  // fs.writeFile(`${targetDir}/content.json`, JSON.stringify(fileObj), (err) => {
+  //   if (err) throw err;
+  // });
+  // fs.writeFile(`${targetDir}/directory.json`, JSON.stringify(dirObj), (err) => {
+  //   if (err) throw err;
+  // });
+  // fs.writeFile(`${targetDir}/filepaths.json`, JSON.stringify(pathObj), (err) => {
+  //   if (err) throw err;
+  // });
 }
 
 //when readDir is complete, call function to build directory and file content objects

@@ -8,121 +8,100 @@
   justify-content: start;
   background-color: black;
   color: white;
-  font-family: "Courier New";
-  font-size: 12px;
-}
+  font-family: 'Courier New';
+  font-size: 12px; }
 
 .chat-container {
   display: flex;
-  flex-direction: column-reverse;
-}
-.chat-container .chatbar {
-  flex-grow: 1;
-  background-color: black;
-  border-top: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  align-content: center;
-  justify-content: center;
-}
-.chat-container .chatbar .chatbar-message,
-.chat-container .chatbar .chatbar-username {
-  opacity: 0.8;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  height: 1.5rem;
-  line-height: 2.5rem;
-  margin: 1px;
-  padding: 0 0.5rem;
-}
-.chat-container .messages-container {
-  min-height: 50vh;
-  max-height: 50vh;
-  display: flex;
-  position: relative;
-}
-.chat-container .messages-container .message-system {
-  display: flex;
-  flex-direction: column;
-}
-.chat-container .messages-container .message-system .message-list-container {
-  display: flex;
-  flex-direction: column-reverse;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse {
-  flex-direction: column;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse .messages {
-  display: block;
-  padding: 0.2rem;
-  margin: 0rem 0rem;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse .message-system {
-  width: 100%;
-  padding: 5px 20px;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse .messages-content,
-.chat-container .messages-container .message-system .message-list-container .unreverse .message-username {
-  overflow: hidden;
-  margin: 5px;
-  padding: 0 10px;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse .messages-content {
-  flex: 8;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse .message-username {
-  flex: 2;
-  font-weight: 700;
-}
-.chat-container .messages-container .message-system .message-list-container .unreverse .notifications {
-  font-weight: 600;
-  margin: 1rem 1rem 2rem 3rem;
-}
+  flex-direction: column-reverse; }
+  .chat-container .chatbar {
+    flex-grow: 1;
+    background-color: black;
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-content: center;
+    justify-content: center; }
+    .chat-container .chatbar .chatbar-message,
+    .chat-container .chatbar .chatbar-username {
+      opacity: 0.8;
+      border: 1px solid black;
+      border-radius: 5px;
+      display: flex;
+      height: 1.5rem;
+      line-height: 2.5rem;
+      margin: 1px;
+      padding: 0 0.5rem; }
+  .chat-container .messages-container {
+    min-height: 50vh;
+    max-height: 50vh;
+    display: flex;
+    position: relative; }
+    .chat-container .messages-container .message-system {
+      display: flex;
+      flex-direction: column; }
+      .chat-container .messages-container .message-system .message-list-container {
+        display: flex;
+        flex-direction: column-reverse;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        margin: 0.1rem 0.1rem 0.1rem 0.1rem; }
+        .chat-container .messages-container .message-system .message-list-container .unreverse {
+          flex-direction: column; }
+          .chat-container .messages-container .message-system .message-list-container .unreverse .messages {
+            display: block;
+            padding: 0.2rem;
+            margin: 0rem 0rem; }
+          .chat-container .messages-container .message-system .message-list-container .unreverse .message-system {
+            width: 100%;
+            padding: 5px 20px; }
+          .chat-container .messages-container .message-system .message-list-container .unreverse .messages-content,
+          .chat-container .messages-container .message-system .message-list-container .unreverse .message-username {
+            overflow: hidden;
+            margin: 5px;
+            padding: 0 10px; }
+          .chat-container .messages-container .message-system .message-list-container .unreverse .messages-content {
+            flex: 8; }
+          .chat-container .messages-container .message-system .message-list-container .unreverse .message-username {
+            flex: 2;
+            font-weight: 700; }
+          .chat-container .messages-container .message-system .message-list-container .unreverse .notifications {
+            font-weight: 600;
+            margin: 1rem 1rem 2rem 3rem; }
 
 .file-container {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-}
-.file-container .react-codemirror2 {
-  position: relative;
-  min-height: 100%;
-}
-.file-container .react-codemirror2 .CodeMirror {
-  min-height: 42vh;
-}
-.file-container .theme-select-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 6vh;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-.file-container .theme-select-container .select-text {
-  color: #EEE;
-  padding: 0rem;
-  margin: 0rem;
-}
-.file-container .theme-select-container .theme-select {
-  padding: 0.5rem;
-  margin: 0.5rem;
-}
+  min-height: 100%; }
+  .file-container .react-codemirror2 {
+    position: relative;
+    min-height: 100%; }
+    .file-container .react-codemirror2 .CodeMirror {
+      min-height: 42vh; }
+  .file-container .theme-select-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    background-color: rgba(0, 0, 0, 0.6); }
+    .file-container .theme-select-container .select-text {
+      color: #EEE;
+      padding: 0rem;
+      margin: 0rem; }
+    .file-container .theme-select-container .theme-select {
+      padding: 0.5rem;
+      margin: 0.5rem; }
 
 .video-main .iframe {
   position: relative;
   width: 100%;
-  height: 52vh;
-}
+  height: 52vh; }
 
 main .currentStream {
   border: 3px solid #555;
@@ -130,193 +109,152 @@ main .currentStream {
   border-radius: 5px;
   width: 75%;
   margin: 2em 4em;
-  padding: 1em;
-}
-main .currentStream .currentStreamBanner {
-  display: flex;
-  justify-content: space-between;
-}
-main .currentStream .currentStreamBanner h3 {
-  font-size: 2em;
-  margin-left: 1em;
-  color: #444444;
-}
-main .currentStream .currentStreamBanner h4 {
-  font-size: 1.5em;
-  color: #444444;
-  margin-top: 1.5em;
-}
-main .currentStream .currentStreamBanner h5 {
-  font-size: 1em;
-  margin-right: 15em;
-  color: #444444;
-}
-main .currentStream p {
-  font-size: 1em;
-  margin: 1em;
-  margin-bottom: 2em;
-}
-main .currentStream .imagePlaceholder {
-  width: 4em;
-  height: 4em;
-  margin: 1em;
-}
+  padding: 1em; }
+  main .currentStream .currentStreamBanner {
+    display: flex;
+    justify-content: space-between; }
+    main .currentStream .currentStreamBanner h3 {
+      font-size: 2em;
+      margin-left: 1em;
+      color: #444444; }
+    main .currentStream .currentStreamBanner h4 {
+      font-size: 1.5em;
+      color: #444444;
+      margin-top: 1.5em; }
+    main .currentStream .currentStreamBanner h5 {
+      font-size: 1em;
+      margin-right: 15em;
+      color: #444444; }
+  main .currentStream p {
+    font-size: 1em;
+    margin: 1em;
+    margin-bottom: 2em; }
+  main .currentStream .imagePlaceholder {
+    width: 4em;
+    height: 4em;
+    margin: 1em; }
 
 .streams {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-.streams .activeStreamCard {
-  border: 3px solid #555;
-  background-color: #cacaca;
-  border-radius: 5px;
-  width: 25vw;
-  height: 25vw;
-  margin: 3em;
-  padding: 1.5em;
-}
-.streams .activeStreamCard:hover {
-  opacity: 0.8;
-}
-.streams .activeStreamCard .banner {
-  display: flex;
-  justify-content: space-between;
-}
-.streams .activeStreamCard .banner div {
-  margin: 1em;
-}
-.streams .activeStreamCard .banner div h1 {
-  font-size: 2.2em;
-  margin: 0;
-  color: #444444;
-}
-.streams .activeStreamCard .banner div h2 {
-  font-size: 1.5em;
-  margin: 0;
-  color: #444444;
-}
-.streams .activeStreamCard .banner .imagePlaceholder {
-  width: 4em;
-  height: 4em;
-  margin: 1em;
-}
-.streams .activeStreamCard .description-container {
-  margin: 1em;
-}
-.streams .activeStreamCard .description-container p {
-  font-size: 1.2em;
-}
+  justify-content: space-around; }
+  .streams .activeStreamCard {
+    border: 3px solid #555;
+    background-color: #cacaca;
+    border-radius: 5px;
+    width: 25vw;
+    height: 25vw;
+    margin: 3em;
+    padding: 1.5em; }
+    .streams .activeStreamCard:hover {
+      opacity: 0.8; }
+    .streams .activeStreamCard .banner {
+      display: flex;
+      justify-content: space-between; }
+      .streams .activeStreamCard .banner div {
+        margin: 1em; }
+        .streams .activeStreamCard .banner div h1 {
+          font-size: 2.2em;
+          margin: 0;
+          color: #444444; }
+        .streams .activeStreamCard .banner div h2 {
+          font-size: 1.5em;
+          margin: 0;
+          color: #444444; }
+      .streams .activeStreamCard .banner .imagePlaceholder {
+        width: 4em;
+        height: 4em;
+        margin: 1em; }
+    .streams .activeStreamCard .description-container {
+      margin: 1em; }
+      .streams .activeStreamCard .description-container p {
+        font-size: 1.2em; }
 
 .streams {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-.streams .archievedStreamCard {
-  border: 3px solid #555;
-  background-color: #cacaca;
-  border-radius: 5px;
-  width: 25vw;
-  height: 25vw;
-  margin: 3em;
-  padding: 1.5em;
-}
-.streams .archievedStreamCard:hover {
-  opacity: 0.8;
-}
-.streams .archievedStreamCard .banner {
-  display: flex;
-  justify-content: space-between;
-}
-.streams .archievedStreamCard .banner div {
-  margin: 1em;
-}
-.streams .archievedStreamCard .banner div h1 {
-  font-size: 2.2em;
-  margin: 0;
-  color: #444444;
-}
-.streams .archievedStreamCard .banner div h2 {
-  font-size: 1.5em;
-  margin: 0;
-  color: #444444;
-}
-.streams .archievedStreamCard .banner div h3 {
-  font-size: 1em;
-  margin: 0;
-  color: #444444;
-}
-.streams .archievedStreamCard .banner .imagePlaceholder {
-  width: 4em;
-  height: 4em;
-  margin: 1em;
-}
-.streams .archievedStreamCard .description-container {
-  margin: 1em;
-}
-.streams .archievedStreamCard .description-container p {
-  font-size: 1.2em;
-}
+  justify-content: space-around; }
+  .streams .archievedStreamCard {
+    border: 3px solid #555;
+    background-color: #cacaca;
+    border-radius: 5px;
+    width: 25vw;
+    height: 25vw;
+    margin: 3em;
+    padding: 1.5em; }
+    .streams .archievedStreamCard:hover {
+      opacity: 0.8; }
+    .streams .archievedStreamCard .banner {
+      display: flex;
+      justify-content: space-between; }
+      .streams .archievedStreamCard .banner div {
+        margin: 1em; }
+        .streams .archievedStreamCard .banner div h1 {
+          font-size: 2.2em;
+          margin: 0;
+          color: #444444; }
+        .streams .archievedStreamCard .banner div h2 {
+          font-size: 1.5em;
+          margin: 0;
+          color: #444444; }
+        .streams .archievedStreamCard .banner div h3 {
+          font-size: 1em;
+          margin: 0;
+          color: #444444; }
+      .streams .archievedStreamCard .banner .imagePlaceholder {
+        width: 4em;
+        height: 4em;
+        margin: 1em; }
+    .streams .archievedStreamCard .description-container {
+      margin: 1em; }
+      .streams .archievedStreamCard .description-container p {
+        font-size: 1.2em; }
 
 .Terminal-display {
   position: relative;
-  overflow: scroll;
-}
-.Terminal-display .wrapper {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-wrap: nowrap;
-}
-.Terminal-display .wrapper .terminal-main div.xterm-screen {
-  display: flex;
-  min-width: 50vw;
-  min-height: 48vh;
-}
-.Terminal-display .wrapper .terminal-main canvas[class^=xterm-] {
-  display: flex;
-  min-width: 50vw !important;
-  min-height: 48vh;
-}
-.Terminal-display .wrapper .terminal-main canvas.xterm-text-layer, .Terminal-display .wrapper .terminal-main canvas.xterm-cursor-layer {
-  padding: 0.5rem 3rem 1rem 2rem;
-}
+  overflow: scroll; }
+  .Terminal-display .wrapper {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: nowrap; }
+    .Terminal-display .wrapper .terminal-main div.xterm-screen {
+      display: flex;
+      min-width: 50vw;
+      min-height: 48vh; }
+    .Terminal-display .wrapper .terminal-main canvas[class^="xterm-"] {
+      display: flex;
+      min-width: 50vw !important;
+      min-height: 48vh; }
+    .Terminal-display .wrapper .terminal-main canvas.xterm-text-layer, .Terminal-display .wrapper .terminal-main canvas.xterm-cursor-layer {
+      padding: 0.5rem 3rem 1rem 2rem; }
 
 .Filetree-display {
-  background-color: #282a36 !important;
-}
-.Filetree-display .ant-tree-switcher {
-  background-color: #282a36 !important;
-}
-.Filetree-display .ant-tree-switcher .ant-tree-switcher-line-icon {
-  color: #fff;
-}
-.Filetree-display .ant-tree-title {
-  color: #fff;
-}
+  background-color: #282a36 !important; }
+  .Filetree-display .ant-tree-switcher {
+    background-color: #282a36 !important; }
+    .Filetree-display .ant-tree-switcher .ant-tree-switcher-line-icon {
+      color: #fff; }
+  .Filetree-display .ant-tree-title {
+    color: #fff; }
 
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /* Set height of body and the document to 100% */
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial;
-}
+  font-family: Arial; }
 
 .index-view {
   background-color: #777;
-  width: 100vw;
-}
+  width: 100vw; }
 
 .streams {
-  width: 100vw;
-}
+  width: 100vw; }
 
 /* Style tab links */
 .tablink {
@@ -328,129 +266,108 @@ body, html {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 18px;
-  width: 33.33%;
-}
+  width: 33.33%; }
 
 .tablink:focus {
-  background-color: #777;
-}
+  background-color: #777; }
 
 .tablink:hover {
-  background-color: #777;
-}
+  background-color: #777; }
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
   color: white;
   display: none;
   padding: 100px 20px;
-  height: 100%;
-}
+  height: 100%; }
 
-.header {
+header {
   height: 75px;
-  background-color: #794545;
-}
-.header .headerLogo {
-  height: 50px;
-  margin: 1em;
-}
-.header .headerbtn {
-  background-color: #bbbbbb;
-  color: #4d4d4d;
-  float: right;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 8px 10px;
-  font-size: 12px;
-  margin: 15px;
-  margin-top: 20px;
-  width: 10em;
-  border-radius: 4px;
-}
-.header .headerbtn:hover {
-  background-color: #777;
-}
+  background-color: #794545; }
+  header .headerLogo {
+    height: 50px;
+    margin: 1em; }
+  header .headerbtn {
+    background-color: #bbbbbb;
+    color: #4d4d4d;
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    font-size: 12px;
+    margin: 15px;
+    margin-top: 20px;
+    width: 10em;
+    border-radius: 4px; }
+  header .headerbtn:hover {
+    background-color: #777; }
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  -moz-osx-font-smoothing: grayscale; }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 .App {
   flex-direction: column;
   min-height: 100vh;
   max-height: 100vh;
   min-width: 100vw;
-  overflow-y: auto;
-}
-.App .stream-parent {
-  overflow: hidden;
-}
-.App .stream-parent .component-container1 {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: "Filetree Video Chat";
-}
-.App .stream-parent .component-container1 .Filetree-display {
-  position: relative;
-  max-height: 52vh;
-  overflow-y: auto;
-  height: 100%;
-  width: 100%;
-  grid-area: Filetree;
-  background-color: white;
-}
-.App .stream-parent .component-container1 .Video-display {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  grid-area: Video;
-}
-.App .stream-parent .component-container1 .Chat-display {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  grid-area: Chat;
-}
-.App .stream-parent .component-container2 {
-  display: grid;
-  position: relative;
-  height: 47vh;
-  grid-template-columns: 50% 50%;
-  grid-template-areas: "Code Terminal";
-}
-.App .stream-parent .component-container2 .Code-display {
-  grid-column: span 6;
-  position: relative;
-  height: 100%;
-  grid-area: Code;
-}
-.App .stream-parent .component-container2 .Terminal-display {
-  grid-column: span 6;
-  position: relative;
-  display: flex;
-  min-width: 100vw;
-  grid-area: Terminal;
-}
+  overflow-y: auto; }
+  .App .stream-parent {
+    overflow: hidden; }
+    .App .stream-parent .component-container1 {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-areas: "Filetree Video Chat"; }
+      .App .stream-parent .component-container1 .Filetree-display {
+        position: relative;
+        max-height: 52vh;
+        overflow-y: auto;
+        height: 100%;
+        width: 100%;
+        grid-area: Filetree;
+        background-color: white; }
+      .App .stream-parent .component-container1 .Video-display {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        grid-area: Video; }
+      .App .stream-parent .component-container1 .Chat-display {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        grid-area: Chat; }
+    .App .stream-parent .component-container2 {
+      display: grid;
+      position: relative;
+      height: 47vh;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: "Code Terminal"; }
+      .App .stream-parent .component-container2 .Code-display {
+        grid-column: span 6;
+        position: relative;
+        height: 100%;
+        grid-area: Code; }
+      .App .stream-parent .component-container2 .Terminal-display {
+        grid-column: span 6;
+        position: relative;
+        display: flex;
+        min-width: 100vw;
+        grid-area: Terminal; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
+  height: 40vmin; }
 
 .App-header {
   background-color: #282c34;
@@ -460,177 +377,139 @@ code {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
+  color: white; }
 
 .App-link {
-  color: #61dafb;
-}
+  color: #61dafb; }
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   to {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 .electron {
   width: 800px;
   height: 600px;
-  background-color: lightgrey;
-}
-.electron .dashboard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-.electron .dashboard .header {
-  height: 35%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.electron .dashboard .header .image-placeholder {
-  width: 50px;
-  height: 50px;
-  margin: 0.5em;
-  background-color: black;
-}
-.electron .dashboard .header .stream-controls {
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-  padding: 1em 2em;
-  width: 60%;
-}
-.electron .dashboard .header .stream-controls #instant {
-  margin: 0.5em;
-}
-.electron .dashboard .header .stream-controls #scheduleNew {
-  margin: 0.5em;
-}
-.electron .dashboard .streams {
-  height: 65%;
-}
-.electron .dashboard .streams .scheduledStreamCard {
-  width: 90%;
-  height: 15%;
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid black;
-  margin: 1em 0;
-  align-items: center;
-}
-.electron .dashboard .streams .scheduledStreamCard .startPlaceholder {
-  width: 50px;
-  height: 50px;
-  background-color: aquamarine;
-}
-.electron .dashboard .streams .scheduledStreamCard p {
-  font-size: 1.5em;
-  height: 20%;
-}
-.electron .dashboard .streams .scheduledStreamCard div {
-  display: inline-flex;
-}
-.electron .dashboard .streams .scheduledStreamCard div .date-time {
-  display: flex;
-  flex-direction: column;
-}
-.electron .dashboard .streams .scheduledStreamCard div .date-time #date {
-  font-size: 1em;
-  display: block;
-  margin: 0;
-}
-.electron .dashboard .streams .scheduledStreamCard div .date-time #time {
-  font-size: 1em;
-  display: block;
-  margin: 0;
-}
-.electron .dashboard .streams .scheduledStreamCard .controls {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.electron .dashboard .streams .scheduledStreamCard .controls #edit-btn {
-  background-color: skyblue;
-  padding: 3px;
-  font-size: 1em;
-}
-.electron .dashboard .streams .scheduledStreamCard .controls #edit-btn:hover {
-  background: rgba(0, 0, 0, 0);
-  color: #3a7999;
-  box-shadow: inset 0 0 0 3px #3a7999;
-}
-.electron .dashboard .streams .scheduledStreamCard .controls #delete-btn {
-  background-color: darkred;
-  padding: 3px;
-  font-size: 1em;
-}
-.electron .dashboard .streams .scheduledStreamCard .controls #delete-btn:hover {
-  background: rgba(0, 0, 0, 0);
-  color: #3a7999;
-  box-shadow: inset 0 0 0 3px #3a7999;
-}
-.electron .new-stream .header {
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
-.electron .new-stream .header #dashboard-btn {
-  margin: 1em;
-  float: left;
-}
-.electron .new-stream .header .logoPlaceholder {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-}
-.electron .new-stream .inputs-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.electron .new-stream .inputs-container h1 {
-  justify-content: center;
-}
-.electron .new-stream .inputs-container .forms-container form .title-input h3 {
-  justify-content: space-around;
-}
-.electron .new-stream .inputs-container .forms-container form .bottom-container {
-  display: inline-flex;
-  justify-content: space-between;
-}
-.electron .start-scheduled {
-  height: 100%;
-}
-.electron .start-scheduled .header {
-  height: 20%;
-  display: flex;
-  justify-content: center;
-}
-.electron .start-scheduled .header .logoPlaceholder {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-}
-.electron .start-scheduled .main-container {
-  height: 60%;
-  border: 2px solid black;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.electron .start-scheduled .main-container div h1 {
-  font-size: 2em;
-}
-.electron .start-scheduled .main-container div p {
-  font-size: 1em;
-}
+  background-color: lightgrey; }
+  .electron .dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%; }
+    .electron .dashboard .header {
+      height: 35%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center; }
+      .electron .dashboard .header .image-placeholder {
+        width: 50px;
+        height: 50px;
+        margin: .5em;
+        background-color: black; }
+      .electron .dashboard .header .stream-controls {
+        display: flex;
+        justify-content: center;
+        border: 2px solid black;
+        padding: 1em 2em;
+        width: 60%; }
+        .electron .dashboard .header .stream-controls #instant {
+          margin: .5em; }
+        .electron .dashboard .header .stream-controls #scheduleNew {
+          margin: .5em; }
+    .electron .dashboard .streams {
+      height: 65%; }
+      .electron .dashboard .streams .scheduledStreamCard {
+        width: 90%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid black;
+        margin: 1em 0;
+        align-items: center; }
+        .electron .dashboard .streams .scheduledStreamCard .startPlaceholder {
+          width: 50px;
+          height: 50px;
+          background-color: aquamarine; }
+        .electron .dashboard .streams .scheduledStreamCard p {
+          font-size: 1.5em;
+          height: 20%; }
+        .electron .dashboard .streams .scheduledStreamCard div {
+          display: inline-flex; }
+          .electron .dashboard .streams .scheduledStreamCard div .date-time {
+            display: flex;
+            flex-direction: column; }
+            .electron .dashboard .streams .scheduledStreamCard div .date-time #date {
+              font-size: 1em;
+              display: block;
+              margin: 0; }
+            .electron .dashboard .streams .scheduledStreamCard div .date-time #time {
+              font-size: 1em;
+              display: block;
+              margin: 0; }
+        .electron .dashboard .streams .scheduledStreamCard .controls {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly; }
+          .electron .dashboard .streams .scheduledStreamCard .controls #edit-btn {
+            background-color: skyblue;
+            padding: 3px;
+            font-size: 1em; }
+            .electron .dashboard .streams .scheduledStreamCard .controls #edit-btn:hover {
+              background: rgba(0, 0, 0, 0);
+              color: #3a7999;
+              box-shadow: inset 0 0 0 3px #3a7999; }
+          .electron .dashboard .streams .scheduledStreamCard .controls #delete-btn {
+            background-color: darkred;
+            padding: 3px;
+            font-size: 1em; }
+            .electron .dashboard .streams .scheduledStreamCard .controls #delete-btn:hover {
+              background: rgba(0, 0, 0, 0);
+              color: #3a7999;
+              box-shadow: inset 0 0 0 3px #3a7999; }
+  .electron .new-stream .header {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em; }
+    .electron .new-stream .header #dashboard-btn {
+      margin: 1em;
+      float: left; }
+    .electron .new-stream .header .logoPlaceholder {
+      width: 50px;
+      height: 50px;
+      background-color: black; }
+  .electron .new-stream .inputs-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    .electron .new-stream .inputs-container h1 {
+      justify-content: center; }
+    .electron .new-stream .inputs-container .forms-container form .title-input h3 {
+      justify-content: space-around; }
+    .electron .new-stream .inputs-container .forms-container form .bottom-container {
+      display: inline-flex;
+      justify-content: space-between; }
+  .electron .start-scheduled {
+    height: 100%; }
+    .electron .start-scheduled .header {
+      height: 20%;
+      display: flex;
+      justify-content: center; }
+      .electron .start-scheduled .header .logoPlaceholder {
+        width: 50px;
+        height: 50px;
+        background-color: black; }
+    .electron .start-scheduled .main-container {
+      height: 60%;
+      border: 2px solid black;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .electron .start-scheduled .main-container div h1 {
+        font-size: 2em; }
+      .electron .start-scheduled .main-container div p {
+        font-size: 1em; }
 
 /*# sourceMappingURL=index.css.map */
